@@ -57,11 +57,11 @@ class Steganography(object):
         if img2.size[0] > img1.size[0] or img2.size[1] > img1.size[1]:
             raise ValueError('Citra 2 tidak boleh lebih besar dari citra 1!')
 
-        # Get the pixel map of the two images
+        # Mendapat map pixel dari kedua foto
         pixel_map1 = img1.load()
         pixel_map2 = img2.load()
 
-        # Create a new image that will be outputted
+        # membuat foto baru yang menjadi hasil penggabungan
         new_image = Image.new(img1.mode, img1.size)
         pixels_new = new_image.load()
 
@@ -85,13 +85,13 @@ class Steganography(object):
 
     @staticmethod
     def unmerge(img):
-        """Unmerge an image.
+        """memisahkan foto tadi.
 
         :param img: The input image.
         :return: The unmerged/extracted image.
         """
 
-        # Load the pixel map
+        # Mendapat map pixel
         pixel_map = img.load()
 
         # Create the new image and load the pixel map
@@ -103,10 +103,10 @@ class Steganography(object):
 
         for i in range(img.size[0]):
             for j in range(img.size[1]):
-                # Get the RGB (as a string tuple) from the current pixel
+                # mendapat nilai RGB (sebagai string tuple) dari pixel sekarang
                 r, g, b = Steganography.__int_to_bin(pixel_map[i, j])
 
-                # Extract the last 4 bits (corresponding to the hidden image)
+                # ekstraksi 4 bit terakhir (dimana foto embed disembunyikan)
                 # Concatenate 4 zero bits because we are working with 8 bit
                 rgb = (r[4:] + '0000',
                        g[4:] + '0000',
