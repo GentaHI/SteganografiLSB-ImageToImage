@@ -6,7 +6,7 @@ Steganografi LSB foto ke foto dalam bahasa Python, untuk kompresi menggunakan to
 
 diperlukan libray pip, pillow, dan click
 
-untuk melakukan merging kedua foto, gunakan
-    -- py steganography.py merge --img1=<namacoverimage>.jpg --img2=<namaEmbeddedImage>.jpg --output=<NamaStegoImage>.png
-untuk melakukan pemisahan dari foto, gunakan
-    -- py steganography.py unmerge --img=<namastegoimage>.png --output=<namaExtractedImage>.png  
+untuk melakukan merging kedua foto, gunakan:
+     py steganography.py merge --img1=<namacoverimage>.jpg --img2=<namaEmbeddedImage>.jpg --output=<NamaStegoImage>.png
+untuk melakukan pemisahan dari foto, gunakan:
+     py steganography.py unmerge --img=<namastegoimage>.png --output=<namaExtractedImage>.png  
